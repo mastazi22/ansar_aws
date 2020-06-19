@@ -866,13 +866,13 @@ class BlockBlackController extends Controller
     {
         if (!empty($ansar) && in_array(AnsarStatusInfo::BLOCK_STATUS, $ansar->getStatus())) {
             if (in_array(AnsarStatusInfo::PANEL_STATUS, $ansar->getStatus())) {
-                $ansar->panel->saveLog("Blocklist", Carbon::now()->format('Y-m-d'), '44.03.0000.048.50.007.18-577 Date:Oct-27-2019');
+                $ansar->panel->saveLog("Blocklist", Carbon::now()->format('Y-m-d'));
                 $ansar->panel->delete();
             } elseif (in_array(AnsarStatusInfo::EMBODIMENT_STATUS, $ansar->getStatus())) {
-                $ansar->embodiment->saveLog('Blocklist', Carbon::now()->format('Y-m-d'), '44.03.0000.048.50.007.18-577 Date:Oct-27-2019', 8);
+                $ansar->embodiment->saveLog('Blocklist', Carbon::now()->format('Y-m-d'));
                 $ansar->embodiment->delete();
             } elseif (in_array(AnsarStatusInfo::REST_STATUS, $ansar->getStatus())) {
-                $ansar->rest->saveLog('Blocklist', Carbon::now()->format('Y-m-d'), '44.03.0000.048.50.007.18-577 Date:Oct-27-2019');
+                $ansar->rest->saveLog('Blocklist', Carbon::now()->format('Y-m-d'));
                 $ansar->rest->delete();
             }
         }
